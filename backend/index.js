@@ -11,49 +11,50 @@ data.use(cors());
 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MANGO_URI)
-.then((info) => {
-    console.log('Successfully connected to MongoDB Atlas');
-})
-.catch((error) => {
-    console.error('Failed to connect to MongoDB Atlas');
-});
+    .then((info) => {
+        console.log('Successfully connected to MongoDB Atlas');
+    })
+    .catch((error) => {
+        console.error('Failed to connect to MongoDB Atlas');
+    });
 
 
-data.post('/sendmail', function(req, res) {
-    var mail = req.body.mail;
+data.post('/sendmail', function (req, res) {
+    const mail = req.body.mail;
     console.log(mail);
-    const crediential=mongoose.model('crediential',{},'Mail')
-    crediential.find().then(function(data){
+    const crediential = mongoose.model('crediential', {}, 'Mail')
+    crediential.find().then(function (data) {
         console.log(data[0].toJSON())
         const transporter = nodemailer.createTransport({
-            service: "gmail",
+            host: "smtp.gmail.com",
+            port: 587,
+            secure: false, // Use `true` for port 465, `false` for all other ports
             auth: {
-                user:data[0].toJSON().user,
-                pass:data[0].toJSON().pass
+              user: data[0].toJSON().user,
+              pass: data[0].toJSON().pass
+            },
+          });
+        transporter.sendMail({
+            from: 'aswin.s2101@gmail.com',
+            to: mail,
+            subject: 'Thanks for purchase ZigZag',
+            text: 'Your order will be Deliverd in 2 or 3 days thanks for shopping!!!!!!!!!!'
+        }, function (error, info) {
+            if (error) {
+                res.send(false)
+            } else {
+                res.send(true)
             }
         });
-          }).catch(function(item){
-            console.log('error')
-          })
-   
+    }).catch(function (item) {
+        res.send('something went wrong')
+    })
 
-    transporter.sendMail({
-        from: 'aswin.s2101@gmail.com',
-        to: mail,
-        subject: 'Thanks for purchase ZigZag',
-        text: 'Your order will be Deliverd in 2 or 3 days thanks for shopping!!!!!!!!!!'
-    }, function(error, info) {
-        if (error) {
-            res.send(false)
-        } else {
-            res.send(true)
-        }
-    });
+
+   
 });
-data.get('/',function(req,res){
-    res.send('hello world')
-})
 
 data.listen(process.env.PORT, function () {
     console.log('server started.........')
 })
+
