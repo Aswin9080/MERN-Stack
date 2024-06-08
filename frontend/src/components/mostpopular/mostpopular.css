@@ -1,0 +1,12 @@
+
+
+.mostpopular--content__img{
+    border:solid black 1px;
+    border-radius: 10px;;
+    box-shadow: opx 1px 1px rgpa();
+    box-shadow: 0 4px 8px 0 rgba(30, 28, 28, 0.7)
+
+}
+.mostpopular_1{
+    filter: contrast(0.8);
+}

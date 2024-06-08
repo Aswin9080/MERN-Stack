@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  padding:0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --fontsize:var(Georgia, 'Times New Roman', Times, serif;)
+}
+.nav{
+  z-index: 1;
+}
+.nav--h1{
+  font-size: large;
+  font-weight: bold;
+  font-size: 30px;
+  color:#570D48;
+}
+
+.ibm-plex-serif-semibold {
+  font-family: "IBM Plex Serif", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+.navbar--Search{
+  display:flex;
+  border: solid black 1px;
+  width:50%;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.navbar--Search input{
+  width:100%;
+}
+.navbar--Search input:focus{
+ outline: none;
+}
+
+/* shopingcollection */
+.shopingcollection{
+  border: solid black 1px;
+  border-radius: 10px 0px 0px 10px;
+}
+
+.menu-MLFEA{
+  border: solid black 1px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(7, 7, 7, 0.1);
+  
+}
+.menu-MLFEA h1{
+  padding: 10px;
+}
+
+
+/*collections*/
+.collection--hfss{
+  padding: 10px;
+  font-size:20px;
+  font-family: --fontsize;
+  font-weight: bold;
+}
+
+.hfss--s{
+  font-weight: bolder;
+}
+
+.hfss-bd{
+  background-color: aqua;
+  padding: 10px;
+  display: inline;
+
+}
+
+.hfss-b{
+  padding: 20px;
+}
+
+.hfss-bd:hover{
+  border-radius: 10px;
+  transition: border-radius 0.3s ease; 
+}
+
+/*    <div className='flex flex-col justify-center items-center'>*/
+/* pant collection*/
+
+.pc--1{
+  border: solid black 2px;
+  border-radius: 10px;
+  padding: 10px;
+  max-height: 250px;
+}
+
+.pantname{
+    font-weight: bold;
+}
+
+.pantbox__img{
+  border: solid green 1px;
+  border-radius: 10px;
+  min-width: 200px;
+  min-height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(140, 204, 155, 0.3);
+
+}
+
+.pantbox__img img{
+  border-radius: 10px;
+  box-shadow: 10px 10px rgba(239, 239, 244, 0.2);
+  width: 100%;
+  height: 150px;
+  box-shadow: 0 4px 8px 0 rgba(250, 249, 249, 0.2), 0 6px 20px 0 rgba(23, 23, 23, 0.19);
+
+}
+
+.pantbox__img:hover {
+  box-shadow: 0 4px 8px 0 rgba(142, 229, 151, 0.5), 0 6px 20px 0 rgba(134, 2, 2, 0.19);
+  transform: translatey(-5%);
+  transition-duration: 0.5s;
+
+}
+
+.pantbox__sc{
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.pantbox__sc:hover::before {
+  content: 'Add to Cart'; 
+  position: absolute; 
+  top: -60px; 
+  left: 50%;
+  transform: translateX(-50%); 
+  background-color: rgba(18, 175, 112, 0.8); 
+  color: white; 
+  padding: 5px 10px; 
+  border-radius: 5px; 
+  font-size: 10px; 
+}
+
+/*shooping card*/
+.card-INPQSR{
+  border-top:solid black 1px;
+  border-bottom:solid black 1px;
+   padding:10px
+}
+
+.pantbox{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/*shooping card details */
+.sc-dsc ,.sc-dci,.sc-pz{
+  border: solid black 1px;
+}
+
+.sc-dcipz{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.carttotal{
+  display: grid;
+  
+}
+.copons__button:hover{
+  border: solid black 1px;
+}
+
+/*fotter */
+.fotter{
+  border: solid black 1px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(5, 220, 109, 0.2), 0 6px 20px 0 rgba(13, 247, 126, 0.19);
+}
+
+/* billing content */
+.billing{
+  padding:10px;
+
+}
+
+.billing--details input ,.billing--notes{
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid rgba(7, 7, 7, 0.1);
+}
+.billing--notes{
+ min-height:100px;
+}
+
+.billing--details input:focus ,.billing--notes:focus{
+  outline: none;
+}
+
+/*onwimage page */
+.ownimage__bigimg ,.ownimage__smallimg{
+  border: 1px solid rgba(7, 7, 7, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(12, 13, 13, 0.2);
+
+
+}
+
+
+
+.shopingcollection {
+  position: absolute;
+  z-index: 9999;
+}
+
+/* offer1 */
+
+.offer1{
+  border-radius: 10px;
+}
+.offershop--button:hover{
+  border-radius: 10px;
+}
+
+.offergame{
+  border:solid black 1px;
+  border-radius: 10px;
+}
+
+.offergame__input{
+  border: 1px solid rgba(7, 7, 7, 0.1);
+  padding: 4px;
+  border-radius:10px 0px 0px 10px;
+}
+
+.offergame__input:focus{
+  outline: none;
+}
+
+/* hdtt_img */
+.hdtt_img{
+  border: 1px solid rgba(7, 7, 7, 0.1);
+  border-radius:10px 0px 0px 10px;
+  box-shadow: 0 4px 8px 0 rgba(12, 13, 13, 0.2);
+
+}
+
+/* auth */
+
+.mask-star {
+  mask-image: url('https://www.svgrepo.com/show/15104/star.svg');
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+/* Background animation */
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.bg-animate {
+  animation: bgMove 15s infinite linear;
+}
