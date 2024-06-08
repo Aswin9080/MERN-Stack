@@ -51,7 +51,11 @@ data.post('/sendmail', function(req, res) {
     });
 });
 
+data.get('/',function(req,res){
+    res.send('hello world')
+})
 
 data.listen(process.env.PORT, function () {
     console.log('server started.........')
 })
+
