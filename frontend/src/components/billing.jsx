@@ -61,7 +61,7 @@ function Billing(props) {
             } else {
                 // Place order logic goes here
                 //console.log(inputFields.email)
-                axios.post('http://localhost:5000/sendmail', { mail: inputFields.email }).
+                    axios.post('https://zigzag-naly.onrender.com/sendmail', { mail: inputFields.email }).
                     then(function (data) {
                         window.confirm('Order placed successfully!')
                     }).catch(function (data) {
