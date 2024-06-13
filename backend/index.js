@@ -13,11 +13,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 
-app.get("/", (req, res) => {
-  const {details} = req.body
-  console.log(details.name);
-  res.send("ok");
-});
+
 
 app.post("/sendmail", async (req, res) => {
   try {
